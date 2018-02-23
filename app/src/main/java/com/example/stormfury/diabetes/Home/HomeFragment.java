@@ -13,7 +13,7 @@ import com.example.stormfury.diabetes.R;
  * Created by stormfury on 2/22/2018.
  */
 
-public class HomeFragment extends Fragment{
+public class HomeFragment extends android.support.v4.app.Fragment{
     private static final String TAG = "HomeFragment";
 
     @Nullable

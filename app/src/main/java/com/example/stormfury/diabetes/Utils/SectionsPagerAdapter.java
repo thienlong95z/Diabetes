@@ -20,7 +20,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     private static final String TAG = "SectionsPagerAdapter";
 
-    private final List<CameraFragment> mFragmentList = new ArrayList<CameraFragment>();
+    private final List<Fragment> mFragmentList = new ArrayList<>();
 
 
     public SectionsPagerAdapter(FragmentManager fm) {
@@ -38,7 +38,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         return mFragmentList.size();
     }
 
-    public void addFragment(CameraFragment fragment){
+    public void addFragment(Fragment fragment){
         mFragmentList.add(fragment);
     }
 

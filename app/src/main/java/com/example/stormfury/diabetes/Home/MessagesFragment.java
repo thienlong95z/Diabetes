@@ -11,7 +11,7 @@ import com.example.stormfury.diabetes.R;
  * Created by stormfury on 2/22/2018.
  */
 
-public class MessagesFragment extends Fragment{
+public class MessagesFragment extends android.support.v4.app.Fragment{
     private static final String TAG = "MessagesFragment";
 
     @Nullable

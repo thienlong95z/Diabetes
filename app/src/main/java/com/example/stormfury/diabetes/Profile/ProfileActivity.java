@@ -11,7 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
+import android.app.ActionBar;
 
 import com.example.stormfury.diabetes.R;
 import com.example.stormfury.diabetes.Utils.BottomNavigationViewHelper;
@@ -24,21 +25,25 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 public class ProfileActivity extends AppCompatActivity{
     private static final String TAG = "ProfileActivity";
     private Context mContext = ProfileActivity.this;
-    private static final int ACTIVITY_NUM = 5;
+    private static final int ACTIVITY_NUM = 4;
     private ProgressBar mProgressBar;
-
+    private ImageView profilePhoto;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actitivy_profile);
         Log.d(TAG, "onCreate: started.");
-        mProgressBar = (ProgressBar) findViewById(R.id.profileProgressBar);
-        mProgressBar.setVisibility(View.GONE);
 
         setupBottomNavigationView();
         setupToolbar();
+        setupActivityWidget();
     }
-    
+    private void setupActivityWidget(){
+        mProgressBar = (ProgressBar) findViewById(R.id.profileProgressBar);
+        mProgressBar.setVisibility(View.GONE);
+        profilePhoto =  (ImageView) findViewById(R.id.profile_photo);
+
+    }
     private void setupToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.profileToolBar);
         setSupportActionBar(toolbar);

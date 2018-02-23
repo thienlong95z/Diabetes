@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,7 +13,9 @@ import android.view.MenuItem;
 import com.example.stormfury.diabetes.R;
 import com.example.stormfury.diabetes.Utils.BottomNavigationViewHelper;
 import com.example.stormfury.diabetes.Utils.SectionsPagerAdapter;
+import com.example.stormfury.diabetes.Utils.UniversalImageLoader;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class HomeActivity extends AppCompatActivity {
     private static final int ACTIVITY_NUM = 1;
@@ -23,11 +26,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: starting.");
-
+        initImageLoader();
         setupBottomNavigationView();
         setupViewPager();
-    }
 
+    }
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(mContext);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
+    }
     /**
      * Responsible for adding the 3 tabs: Camera, Home, Messages
      */

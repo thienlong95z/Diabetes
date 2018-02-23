@@ -13,7 +13,7 @@ import com.example.stormfury.diabetes.R;
  * Created by stormfury on 2/23/2018.
  */
 
-public class SignOutFragment extends Fragment {
+public class SignOutFragment extends android.support.v4.app.Fragment {
     private static final String TAG = "SignOutFragment";
     @Nullable
     @Override
